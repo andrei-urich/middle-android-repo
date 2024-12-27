@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 
-class CustomContainer @JvmOverloads constructor(
+class CustomViewExampl @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null
 ) : ViewGroup(context, attrs) {
@@ -72,3 +72,4 @@ class CustomContainer @JvmOverloads constructor(
         return childCount <= 2
     }
 }
+
