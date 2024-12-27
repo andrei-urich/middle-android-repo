@@ -2,22 +2,26 @@
 <com.example.androidpracticumcustomview.ui.theme.CustomContainer xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/custom_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="5dip">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/light_blue_600"
-        android:text="View_2"
-        android:textColor="@color/black"
-        android:textSize="24sp" />
+    android:layout_height="match_parent">
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="View1"
+    android:textSize="30sp"
+    android:background="@color/black"
+    android:textColor="@color/light_blue_A400"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="View2"
+        android:textSize="30sp"
         android:background="@color/black"
-        android:text="View_1"
-        android:textColor="@color/purple_200"
-        android:textSize="24sp" />
+        android:textColor="@color/light_blue_A400"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"/>
+
 </com.example.androidpracticumcustomview.ui.theme.CustomContainer>

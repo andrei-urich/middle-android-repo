@@ -43,3 +43,4 @@ libs
 *.cab
 *.msi
 *.msm
+/.name
