@@ -3,6 +3,5 @@
 
     <style name="Theme.AndroidPracticumCustomView" parent="android:Theme.Material.Light.NoActionBar" />
 
-    <style name="ThemeOverlay.AndroidPracticumCustomView.FullscreenContainer" parent="">
-    </style>
+    <style name="ThemeOverlay.AndroidPracticumCustomView.FullscreenContainer" parent=""></style>
 </resources>

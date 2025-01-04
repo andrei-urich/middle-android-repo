@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">android practicum custom view</string>
+    <string name="title_activity_custom_view_two">CustomViewActivityTwo</string>
 </resources>

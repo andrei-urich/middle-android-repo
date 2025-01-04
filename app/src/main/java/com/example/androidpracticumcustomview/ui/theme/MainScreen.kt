@@ -18,7 +18,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.androidpracticumcustomview.CustomViewActivity
+import com.example.androidpracticumcustomview.CustomViewActivityOne
+import com.example.androidpracticumcustomview.CustomViewActivityTwo
 
 @Preview
 @Composable
@@ -31,7 +32,7 @@ fun MainScreen() {
     ) {
         Button(
             onClick = {
-                val intent = Intent(context, CustomViewActivity::class.java)
+                val intent = Intent(context, CustomViewActivityOne::class.java)
                 context.startActivity(intent)
             },
             colors = ButtonColors(
@@ -53,7 +54,8 @@ fun MainScreen() {
         )
         Button(
             onClick = {
-
+                val intent = Intent(context, CustomViewActivityTwo::class.java)
+                context.startActivity(intent)
             }
         ) {
             Text(
