@@ -1,12 +1,7 @@
 package com.example.androidpracticumcustomview.ui.theme
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.Layout
 
 /*
 Задание:
@@ -18,31 +13,27 @@ import androidx.compose.ui.Modifier
  */
 @Composable
 fun CustomContainerCompose(
-    firstChild: @Composable (() -> Unit)?,
-    secondChild: @Composable (() -> Unit)?
+    content: @Composable () -> Unit
 ) {
-    // Блок активации анимации при первом запуске
-    LaunchedEffect(Unit) {
-        // TODO
-        // ...
-    }
 
-    // Основной контейнер
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Box(
-            modifier = Modifier.weight(1f),
-            contentAlignment = Alignment.BottomCenter
-        ) {
-            firstChild?.invoke()
+    Layout(content) { measurables, constraints ->
+        val placeables = measurables.map { measurable ->
+            measurable.measure(constraints)
         }
-        Box(
-            modifier = Modifier.weight(1f),
-            contentAlignment = Alignment.TopCenter
-        ) {
-            secondChild?.invoke()
+        layout(constraints.maxWidth, constraints.maxHeight) {
+            var yPosition = constraints.maxHeight / 2
+            var xPosition = constraints.maxWidth / 2
+
+            if (placeables[0] !== null) {
+                yPosition = constraints.maxHeight / 2 - placeables[0].measuredHeight
+                xPosition = (constraints.maxWidth - placeables[0].measuredWidth) / 2
+                placeables[0].placeRelative(xPosition, yPosition)
+            }
+            if (placeables[1] !== null) {
+                yPosition = constraints.maxHeight / 2 + placeables[1].measuredHeight
+                xPosition = (constraints.maxWidth - placeables[1].measuredWidth) / 2
+                placeables[1].placeRelative(xPosition, yPosition)
+            }
         }
     }
 }
