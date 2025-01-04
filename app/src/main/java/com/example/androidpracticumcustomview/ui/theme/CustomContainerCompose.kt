@@ -1,16 +1,12 @@
 package com.example.androidpracticumcustomview.ui.theme
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.androidpracticumcustomview.R
 
 /*
 Задание:
@@ -25,9 +21,6 @@ fun CustomContainerCompose(
     firstChild: @Composable (() -> Unit)?,
     secondChild: @Composable (() -> Unit)?
 ) {
-    // Блок создания и инициализации переменных
-    // ..
-
     // Блок активации анимации при первом запуске
     LaunchedEffect(Unit) {
         // TODO
@@ -35,9 +28,20 @@ fun CustomContainerCompose(
     }
 
     // Основной контейнер
-    Box() {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Box(
+            modifier = Modifier.weight(1f),
+            contentAlignment = Alignment.BottomCenter
+        ) {
             firstChild?.invoke()
+        }
+        Box(
+            modifier = Modifier.weight(1f),
+            contentAlignment = Alignment.TopCenter
+        ) {
             secondChild?.invoke()
         }
     }
