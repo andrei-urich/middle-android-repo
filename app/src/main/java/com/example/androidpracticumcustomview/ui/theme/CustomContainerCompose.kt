@@ -30,7 +30,7 @@ fun CustomContainerCompose(
                 placeables[0].placeRelative(xPosition, yPosition)
             }
             if (placeables[1] !== null) {
-                yPosition = constraints.maxHeight / 2 + placeables[1].measuredHeight
+                yPosition = constraints.maxHeight / 2
                 xPosition = (constraints.maxWidth - placeables[1].measuredWidth) / 2
                 placeables[1].placeRelative(xPosition, yPosition)
             }
